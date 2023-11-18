@@ -1,69 +1,111 @@
-* {
-    margin: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto:wght@100;300;500;700&display=swap');
 
-
-
-#container {
+body {
     text-align: center;
     width: 80vw;
-    height: 100vh;
     margin: 0 auto;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 36, 1) 50%, rgba(2, 0, 36, 1) 100%);
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
 }
 
+header{
+    font-family: 'Agbalumo', cursive;
+    letter-spacing: 2px;
+}
+section {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 45vh;
+    height: 9vh;
+    padding: 0 auto;
+    background-color: #fff;
+    -webkit-border-bottom-right-radius: 50%;
+    -webkit-border-bottom-left-radius: 50%;
+    -moz-border-radius-bottomright: 50%;
+    -moz-border-radius-bottomleft: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
 
+}
 
 .tentativa {
     display: flex;
     justify-content: space-around;
     column-gap: 10%;
+    height: 100%;
 }
 
-.left,
-.right {
+.left {
     display: flex;
+    column-gap: 10px;
 }
 
-.left>div,
-.right>div {
+.right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    row-gap: 1%;
+}
+
+.left>div {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background-color: rgb(77, 77, 77);
-    margin: 5px;
 }
 
-main{
+
+.right>div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(77, 77, 77);
+}
+
+main {
     display: flex;
     flex-direction: column;
-    margin: 0px auto;
-    width: 30vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    min-width: 40vw;
+    border-radius: 10%;
+    background-color: #fff;
+    height: 60vh;
+    max-width: 60vh;
+    padding: 1%;
 }
 
-.select-wrapper {
+.selecionar-cor {
     border-radius: 50%;
     display: inline-block;
     overflow: hidden;
     margin: 5px;
 }
 
-.select-wrapper select {
-    width: 35px;
-    height: 35px;
+.selecionar-cor select {
+    width: 30px;
+    height: 30px;
     border: 0px;
     outline: none;
 }
 
 input[type=button] {
-    background-color: rgb(4, 78, 4);
+    background-color: #790924;
     cursor: pointer;
-    color: #cccccc;
-    border-radius: 12px;
-    height: 35px;
-    width: 100px;
-    margin: 5px auto;
+    color: #fff;
+    border-radius: 20%;
+    height: 50%;
+    width: 30%;
+    margin: 0 auto;
     transition: 0.5s;
+    font-weight: bold;
+    font-size: 80%;
 }
 
 select:hover,
@@ -74,6 +116,8 @@ input:hover {
 
 input[type=button]:active {
     background-color: rgb(3, 156, 3);
+    position: relative;
+    top: 2px;
 }
 
 
@@ -98,6 +142,15 @@ input[type=button]:active {
     background-color: violet;
 }
 
-.purple {
-    background-color: purple;
+.black {
+    background-color: black;
+}
+
+footer{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a{
+    color: white;
 }
