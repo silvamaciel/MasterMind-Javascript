@@ -1,10 +1,10 @@
 const main_display = document.querySelector('main');
-const div_escolher_cores = document.getElementById('div-select-color');
+const div_escolher_cores = document.getElementById('selecao-de-cores');
 const botao_validacao = document.getElementById('validar-btn');
 
 let tamanhoDaSequencia = 4;
 let maxTentativas = 10;
-let cores = ['blue', 'yellow', 'orange', 'green', 'violet', 'purple'];
+let cores = ['blue', 'yellow', 'orange', 'green', 'purple'];
 
 let sequenciaAleatoria = [];
 let quantidade_tentativas = 1;
@@ -101,12 +101,14 @@ function init() {
     }
 
     for (let i = 1; i <= tamanhoDaSequencia; i++) {
-        let div_select_wrapper = document.createElement('div');
-        div_select_wrapper.setAttribute('class', 'selecionar-cor');
+        let div_selecionar_cores = document.createElement('div');
+        div_selecionar_cores.setAttribute('class', 'selecionar-cor');
         let select = document.createElement('select');
 
         for (let cor of cores) {
             let option = document.createElement('option');
+            let textoCor = document.createTextNode(cor);
+            option.appendChild(textoCor);
             option.setAttribute('style', 'background-color:' + cor);
             option.setAttribute('value', cor);
             select.append(option);
@@ -117,8 +119,8 @@ function init() {
             e.target.setAttribute('style', 'background-color:' + e.target.value);
         });
 
-        div_select_wrapper.append(select);
-        div_escolher_cores.append(div_select_wrapper);
+        div_selecionar_cores.append(select);
+        div_escolher_cores.append(div_selecionar_cores);
     }
 
     criarSequenciaAleatoria();
