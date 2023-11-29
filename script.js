@@ -1,13 +1,26 @@
 const main_display = document.querySelector('main');
 const div_escolher_cores = document.getElementById('selecao-de-cores');
 const botao_validacao = document.getElementById('validar-btn');
+const tamanhoSequenciaInput = document.getElementById('tamanhoSequencia');
+const maxTentativasInput = document.getElementById('maxTentativas');
 
-let tamanhoDaSequencia = 4;
-let maxTentativas = 10;
+let tamanhoDaSequencia = parseInt(tamanhoSequenciaInput.value);
+let maxTentativas = parseInt(maxTentativasInput.value);
 let cores = ['blue', 'yellow', 'orange', 'green', 'purple'];
+
 
 let sequenciaAleatoria = [];
 let quantidade_tentativas = 1;
+
+tamanhoSequenciaInput.addEventListener('input', function () {
+    tamanhoDaSequencia = parseInt(this.value);
+    reiniciarJogo();
+});
+
+maxTentativasInput.addEventListener('input', function () {
+    maxTentativas = parseInt(this.value);
+    reiniciarJogo();
+});
 
 function criarSequenciaAleatoria() {
     for (let i = 1; i <= tamanhoDaSequencia; i++) {
@@ -63,17 +76,18 @@ function ChecarAcertos(correcaoTentativa) {
 
     if (QtdAcertos === tamanhoDaSequencia) {
         alert('Parabéns, você venceu!');
-        init();
+        reiniciarJogo();
     } else if (quantidade_tentativas >= maxTentativas) {
         alert('Não fique Triste, tente novamente!');
-        init();
+        reiniciarJogo();
     } else {
         quantidade_tentativas++;
     }
 }
 
 
-function init() {
+
+function reiniciarJogo() {
     sequenciaAleatoria = [];
     quantidade_tentativas = 1;
     main_display.innerHTML = '';
@@ -127,11 +141,4 @@ function init() {
     console.log('Sequência correta para vencer: ', sequenciaAleatoria);
 }
 
-
-init();
-
-
-
-
-
-
+reiniciarJogo();

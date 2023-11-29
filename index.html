@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8" />
@@ -13,9 +13,21 @@
     <header>
         <h1>Mastermind</h1>
     </header>
+    <section class="section-ajuste-dificuldade">
+        <div>
+            <label for="tamanhoSequencia">Tamanho da Sequência:</label><br />
+            <input type="number" id="tamanhoSequencia" value="4" min="2" max="6" step="2" />
+        </div>
+        <div>
+            <label for="maxTentativas">Quantidade de Tentativas:</label>
+            <input type="number" id="maxTentativas" value="10" min="6" max="10" step="2" />
+        </div>
+    </section>
+
     <main>
+        <!-- Conteúdo de validação de cores será ajustado aqui-->
     </main>
-    <section>
+    <section class="section-de-validacao">
         <div id="selecao-de-cores"></div>
         <input id="validar-btn" type="button" value="Verificar" />
     </section>
