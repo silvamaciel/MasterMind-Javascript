@@ -34,23 +34,22 @@ header {
 
 }
 
+.section-ajuste-dificuldade {
+    display: flex;
+    flex-direction: column;
+}
+
 .tentativa {
     display: flex;
     justify-content: space-around;
     column-gap: 10%;
     height: 100%;
+    align-items: center;
 }
 
 .left {
     display: flex;
     column-gap: 10px;
-}
-
-.right {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    row-gap: 1%;
 }
 
 .left>div {
@@ -60,6 +59,11 @@ header {
     background-color: rgb(77, 77, 77);
 }
 
+.right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+}
 
 .right>div {
     width: 10px;
@@ -74,17 +78,18 @@ main {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    min-width: 40vw;
+    width: 20%;
+    min-width: 60vh;
     border-radius: 10%;
     background-color: #fff;
     height: 60vh;
-    max-width: 60vh;
     padding: 1%;
 }
 
 .selecionar-cor {
     border-radius: 50%;
     display: inline-block;
+    padding: 0 auto;
     overflow: hidden;
     margin: 5px;
 }
